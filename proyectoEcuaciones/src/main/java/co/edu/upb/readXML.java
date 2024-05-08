@@ -32,7 +32,9 @@ public class readXML {
                 if (timestepNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element timestepElement = (Element) timestepNode;
                     // Obtener el atributo 'time' de 'timestep'
+                    System.out.println("-------------------------------------------");
                     System.out.println("Timestep time: " + timestepElement.getAttribute("time"));
+                    //añadir lista a la lista de Simulacion
 
                     // Obtener la lista de elementos 'vehicle' dentro de 'timestep'
                     NodeList vehicleList = timestepElement.getElementsByTagName("vehicle");
@@ -41,9 +43,19 @@ public class readXML {
                         if (vehicleNode.getNodeType() == Node.ELEMENT_NODE) {
                             Element vehicleElement = (Element) vehicleNode;
                             // Obtener los atributos de 'vehicle'
+
+                            // añadir a la lisra dentro de simulacion
                             System.out.println("Vehicle id: " + vehicleElement.getAttribute("id"));
                             System.out.println("Vehicle x: " + vehicleElement.getAttribute("x"));
                             System.out.println("Vehicle y: " + vehicleElement.getAttribute("y"));
+                            System.out.println("Vehicle angle: " + vehicleElement.getAttribute("angle"));
+                            System.out.println("Vehicle type: " + vehicleElement.getAttribute("type"));
+                            System.out.println("Vehicle speed: " + vehicleElement.getAttribute("speed"));
+                            System.out.println("Vehicle pos: " + vehicleElement.getAttribute("pos"));
+                            System.out.println("Vehicle lane: " + vehicleElement.getAttribute("lane"));
+                            System.out.println("Vehicle slope: " + vehicleElement.getAttribute("slope"));
+
+
                             // Y así sucesivamente para los demás atributos que desees obtener
                         }
                     }
