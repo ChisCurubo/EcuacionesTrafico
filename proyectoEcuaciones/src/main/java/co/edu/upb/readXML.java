@@ -22,14 +22,15 @@ public class readXML {
     }
 
     public static void readXml() {
-        Simulacion simulacion = new Simulacion();
+
         Scanner scan = new Scanner(System.in);
-        String[] rutasSimulaciones = {"proyectoEcuaciones/sumoTraceA.xml",  //SumoTraceA
-                "proyectoEcuaciones/sumoTraceB.xml",                        //SumoTraceB
-                "proyectoEcuaciones/sumoTraceC.xml"                         //SumoTraceC
+        String[] rutasSimulaciones = {"D:\\CursoJava\\Programacion\\Ecuaciones\\proyectoEcuaciones\\sumoTraceA.xml",  //SumoTraceA
+                "D:\\CursoJava\\Programacion\\Ecuaciones\\proyectoEcuaciones\\sumoTraceB.xml",                        //SumoTraceB
+                "D:\\CursoJava\\Programacion\\Ecuaciones\\proyectoEcuaciones\\sumoTraceC.xml"                         //SumoTraceC
         };
 
         while (true){
+            Simulacion simulacion = new Simulacion();
             System.out.println("-----------------------------------------------------------------------" +
                     "\nQue simulación desea ver: ");
             System.out.printf("%-15s %-15s %-15s %25s %n", "(1). TraceA", "(2). TraceB", "(3). TraceB", "-(0). Salir");
@@ -98,7 +99,10 @@ public class readXML {
                     }
                 }
                 simulacion.sortBy();
-                System.out.println(simulacion.getSize());
+                System.out.println("Tamaño de la simulación: " + simulacion.getSize());
+                System.out.println("Velocidad Promedio de  la simulación: "+  simulacion.avgSpeed());
+                System.out.println("Densidad Promedio de  la simulación: "+  simulacion.avgDensidad());
+                System.out.println("Flujo Promedio de  la simulación: "+  simulacion.avgFlujo());
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -1,12 +1,13 @@
 package co.edu.upb;
 
-import java.util.Comparator;
 import java.util.LinkedList;
 
 public class TimeStep {
+    int tamanoMapa = 250;
     private LinkedList<Vehiculo> vehiculos;
     private double totalSpeed;
     private double densidad;
+    private double velocidad;
     private double flujo;
     private String time;
 
@@ -14,6 +15,9 @@ public class TimeStep {
         vehiculos = new LinkedList<>();
         this.time = time;
         totalSpeed = 0;
+        densidad = 0;
+        flujo = 0;
+        velocidad = 0;
     }
 
     public void addVehicle(Vehiculo newVehicle){
@@ -23,7 +27,23 @@ public class TimeStep {
 
     public double getAvgSpeed(){
         if (getSize() == 0) return 0;
-        return totalSpeed / vehiculos.size();
+        velocidad = totalSpeed / vehiculos.size();
+        return velocidad;
+    }
+
+    public double getAvgDensidad(){
+        if (getSize() == 0) return 0;
+        System.out.println("size "+ getSize());
+        System.out.println("Tamaño mapa " + tamanoMapa);
+        densidad=  (getSize()/ tamanoMapa);
+        System.out.println("den " +densidad);
+        return densidad;
+    }
+
+    public double gettAvgFlujo(){
+        if (getSize() == 0) return 0;
+        flujo = (float) (densidad * getAvgSpeed());
+        return flujo;
     }
 
     // Getter and setter --------------------------------------------------------
