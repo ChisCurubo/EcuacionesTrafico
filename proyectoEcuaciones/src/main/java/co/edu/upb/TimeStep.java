@@ -3,7 +3,7 @@ package co.edu.upb;
 import java.util.LinkedList;
 
 public class TimeStep {
-    int tamanoMapa = 250;
+    double tamanoMapa = 250;
     private LinkedList<Vehiculo> vehiculos;
     private double totalSpeed;
     private double densidad;
@@ -33,10 +33,7 @@ public class TimeStep {
 
     public double getAvgDensidad(){
         if (getSize() == 0) return 0;
-        System.out.println("size "+ getSize());
-        System.out.println("Tamaño mapa " + tamanoMapa);
         densidad=  (getSize()/ tamanoMapa);
-        System.out.println("den " +densidad);
         return densidad;
     }
 

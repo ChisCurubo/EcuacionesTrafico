@@ -27,7 +27,9 @@ public class Simulacion {
         totalFlujo += timeStep.gettAvgFlujo();
     }
 
-
+    public LinkedList<TimeStep> getVehiculos() {
+        return vehiculos;
+    }
 
     public int getSize(){
         return vehiculos.size();
